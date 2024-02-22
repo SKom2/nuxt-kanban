@@ -33,6 +33,8 @@ export default defineComponent({
     }
 
     const onSubmit = async (tableId: String, content: String) => {
+      const table = tableStore.tables.find(table => table.id === tableId)
+      if (!table) return;
       const newTask = {
         id: Date.now(),
         content
@@ -51,8 +53,8 @@ export default defineComponent({
 
 <template>
   <article class="w-72 flex flex-col rounded-md gap-1" v-for="table in tableStore.tables" :key="table.id">
-    <div :class="{[table.color]: true, 'px-3': true, 'py-2': true, 'rounded-md': true}">
-      <h3 class="text-sm font-semibold text-white uppercase">{{ table.name }}</h3>
+    <div :class="table.color + ' px-3 py-2 rounded-md'">
+      <h3 class="text-sm font-semibold text-white uppercase">{{ table.name }}({{ table.tasks.length }})</h3>
     </div>
     <Tasks :table="table" />
     <form

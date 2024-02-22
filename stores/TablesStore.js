@@ -50,9 +50,7 @@ export const useTablesStore = defineStore('tableStore', {
         onSubmit(tableId, task){
             const tableIndex = this.tables.findIndex(table => table.id === tableId)
             if (tableIndex === -1) return;
-            console.log(task)
             this.tables[tableIndex].tasks.push(task)
-            console.log(this.tables[tableIndex].tasks)
         },
         onDeleteTask(tableId, taskId) {
             const tableIndex = this.tables.findIndex(table => table.id === tableId);
@@ -62,6 +60,12 @@ export const useTablesStore = defineStore('tableStore', {
             if (taskIndex === -1) return;
 
             this.tables[tableIndex].tasks.splice(taskIndex, 1);
-        }
+        },
+        updateTasks(tableId, tasks) {
+            const tableIndex = this.tables.findIndex(table => table.id === tableId)
+            if (tableIndex === -1) return;
+            this.tables[tableIndex].tasks = tasks;
+            localStorage.setItem('tables', JSON.stringify(this.tables))
+        },
     }
 })
