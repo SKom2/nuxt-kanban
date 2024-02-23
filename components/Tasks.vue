@@ -1,6 +1,6 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
-import {useTablesStore} from "~/stores/TablesStore";
+import {useTablesStore} from "../stores/TablesStore";
 import Draggable from 'vuedraggable';
 
 export default defineComponent({
@@ -18,6 +18,7 @@ export default defineComponent({
     const tableStore = useTablesStore()
     const tasks = ref(props.table.tasks)
     const deleteTask = (tableId: String, taskId: String) => {
+      console.log(tableStore)
       tableStore.onDeleteTask(tableId, taskId)
       localStorage.setItem('tables', JSON.stringify(tableStore.tables))
     }
