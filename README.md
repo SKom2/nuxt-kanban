@@ -2,6 +2,8 @@
 
 This is a Kanban board web application built using Vue.js, Nuxt.js, TypeScript, and Tailwind CSS. It allows users to manage their tasks efficiently through a user-friendly drag-and-drop interface.
 
+![image](https://github.com/SKom2/nuxt-kanban/assets/103752057/48a57b3d-521c-4922-82b0-c2a583801682)
+
 ## Built With
 
 - Vue.js
