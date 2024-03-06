@@ -1,5 +1,5 @@
 <script>
-import { ref, defineComponent } from 'vue';
+import { defineComponent } from 'vue';
 import Table from './Tables.vue';
 
 export default defineComponent({

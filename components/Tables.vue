@@ -1,7 +1,6 @@
 <script lang="ts">
 import {defineComponent, ref, onMounted} from 'vue'
 import Tasks from '../components/Tasks.vue';
-import { v4 as uuidv4 } from 'uuid';
 import {useTablesStore} from "~/stores/TablesStore";
 
 export default defineComponent({
@@ -11,7 +10,7 @@ export default defineComponent({
   },
   data(){
     return{
-      content: 'mario'
+      content: ''
     }
   },
   setup(){
@@ -26,15 +25,16 @@ export default defineComponent({
     const tableStore = useTablesStore()
     const textareaNameRef = ref()
 
-    const showForm = async (tableId: String) => {
+    const showForm = async (tableId: number) => {
       tableStore.toggleFormState(tableId)
       await nextTick()
       textareaNameRef.value[0].focus()
     }
 
-    const onSubmit = async (tableId: String, content: String) => {
+    const onSubmit = async (tableId: number, content: String) => {
       const table = tableStore.tables.find(table => table.id === tableId)
       if (!table) return;
+      if (!content) return;
       const newTask = {
         id: Date.now(),
         content
