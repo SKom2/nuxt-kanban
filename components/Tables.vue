@@ -23,6 +23,7 @@ export default defineComponent({
     })
 
     const tableStore = useTablesStore()
+    const content = ref('');
     const textareaNameRef = ref()
 
     const showForm = async (tableId: number) => {
@@ -31,21 +32,22 @@ export default defineComponent({
       textareaNameRef.value[0].focus()
     }
 
-    const onSubmit = async (tableId: number, content: String) => {
+    const onSubmit = async (tableId: number, taskContent: String) => {
       const table = tableStore.tables.find(table => table.id === tableId)
-      if (!table) return;
-      if (!content) return;
+      if (!table || !taskContent.trim()) return;
       const newTask = {
         id: Date.now(),
-        content
+        content: taskContent
       }
 
       tableStore.onSubmit(tableId, newTask)
       tableStore.toggleFormState(tableId)
-      localStorage.setItem('tables', JSON.stringify(tableStore.tables))
+      localStorage.setItem('tables', JSON.stringify(tableStore.tables));
+
+      content.value = '';
     };
 
-    return {tableStore, textareaNameRef, showForm, onSubmit}
+    return {tableStore, textareaNameRef, showForm, onSubmit, content}
   }
 })
 
