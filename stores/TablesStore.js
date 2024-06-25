@@ -11,21 +11,21 @@ export const useTablesStore = defineStore('tableStore', {
                 tasks: []
             },
             {
-                id: Date.now(),
+                id: Date.now() + 1,
                 name: 'In progress',
                 color: 'bg-blue-800',
                 isShowingForm: false,
                 tasks: []
             },
             {
-                id: Date.now(),
+                id: Date.now() + 2,
                 name: 'Needs review',
                 color: "bg-yellow-600",
                 isShowingForm: false,
                 tasks: []
             },
             {
-                id: Date.now(),
+                id: Date.now() + 3,
                 name: 'Approved',
                 color: 'bg-green-800',
                 isShowingForm: false,
