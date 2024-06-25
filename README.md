@@ -1,8 +1,16 @@
 # Vue Kanban Board
 
-This is a Kanban board web application built using Vue.js, Nuxt.js, TypeScript, and Tailwind CSS. It allows users to manage their tasks efficiently through a user-friendly drag-and-drop interface.
+This project is a Kanban board web application built using Vue.js, Nuxt.js, TypeScript, and Tailwind CSS. It provides users with a streamlined interface for managing tasks efficiently through drag-and-drop functionality.
 
-![image](https://github.com/SKom2/nuxt-kanban/assets/103752057/48a57b3d-521c-4922-82b0-c2a583801682)
+![Kanban Board Preview](https://github.com/SKom2/nuxt-kanban/assets/103752057/48a57b3d-521c-4922-82b0-c2a583801682)
+
+## Table of Contents
+
+  - [Built With](#built-with)
+  - [Features](#features)
+  - [Roadmap](#roadmap)
+  - [Setup](#setup)
+  - [Links](#links)
 
 ## Built With
 
@@ -13,34 +21,47 @@ This is a Kanban board web application built using Vue.js, Nuxt.js, TypeScript, 
 
 ## Features
 
-- Add tasks to the board and delete them.
-
+- **User Authentication**: Secure access for managing tasks.
+- **Task Management**: Add and delete tasks on the board.
+  
 <p align="center">
   <img src="https://github.com/SKom2/nuxt-kanban/assets/103752057/54ccdb6f-3ab4-4f0b-81b5-0cecaf54b62b" width="100%">
 </p>
 
-- Move tasks across different columns to track their progress.
+- **Task Progress**: Move tasks across columns to track progress.
 
 <p align="center">
   <img src="https://github.com/SKom2/nuxt-kanban/assets/103752057/1894b450-22e8-417b-b7ad-dacaf1988f3f" width="100%">
 </p>
-  
-- Automatically track the number of tasks in each column.
+
+- **Column Statistics**: Automatically track task counts per column.
 
 ## Roadmap
 
 Currently in development:
 
-1. User authentication - to support multiple users with individual boards.
-2. Real-time card state updates via WebSockets and server communication - to ensure live updates and interactions among users.
+- **Real-time Updates**: Implement WebSockets for live card state updates and real-time interactions among users.
 
 ## Setup
 
-1. Clone the repository
-2. Install dependencies: `yarn install`
-3. Start the development server: `yarn dev`
+To set up and run the project locally:
 
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/SKom2/nuxt-kanban.git
+    cd nuxt-kanban
+    ```
 
+2. **Install dependencies**:
+    ```bash
+    yarn install
+    ```
 
+3. **Start the development server**:
+    ```bash
+    yarn dev
+    ```
 
+## Links
 
+- [Live Demo](https://deploy-preview-4--kanban52.netlify.app/)
